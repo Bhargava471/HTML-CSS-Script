@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    const item = [{
+    id : 123,
+    name : "KitKat",
+    price: 10,
+    quantity: '1',
+},
+    {
+        id : 124,
+    id : "Abhi",
+    name : 45,
+    price : 20,
+    quantity : "2"
+},
+{   id : 125,
+    name: "DairyMilk",
+    price : 50,
+    quantity : "3",
+}];
+function compareBy(propertyName) {
+    return function (obj1,obj2){
+        let obj1_propName = obj1[propertyName],
+                obj2_propName = obj2[propertyName];
+        if(obj1_propName > obj2_propName){
+            return 1;
+        } else   if(obj1_propName < obj2_propName){
+            return -1;
+        }else{
+            return 0;
+        }
+    };
+}
+console.log("Item data after sorting....");
+item.sort(compareBy('itemprice'));
+console.table(item);
+</script>
+</body>
+</html>
